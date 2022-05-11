@@ -642,17 +642,14 @@ h1,h2,h3,h4,h5,h6,ul,p {
     opacity: 0;
 }
 
-.overlay-text:hover, .overlay:hover::before {
+.link-item:focus .overlay-text,.link-item:focus .overlay::before {
     opacity: 1;
 }
 
-.link-item:hover .overlay-text{
+.link-item:hover .overlay-text,.link-item:hover .overlay::before{
     opacity: 1;
 }
 
-.link-item:hover .overlay::before {
-    opacity: 1;
-}
 
 
 
