@@ -158,14 +158,12 @@ h1,h2,h3,h4,h5,h6,ul,p {
     bottom: 0px;
     left: 0px;
     position: absolute;
+    opacity: 0;
 
-    display: none;
-
-    
 }
 
 .link:hover::after, .link:focus::after {
-    display: block;
+    opacity: 1;
 }
 
 
@@ -181,7 +179,7 @@ h1,h2,h3,h4,h5,h6,ul,p {
 }
 
 .link.active::after {
-    display: block;
+    opacity: 1;
 }
 
 
@@ -591,6 +589,7 @@ h1,h2,h3,h4,h5,h6,ul,p {
 }
 
 .projects-picture {
+    
     display: block;
     max-width: 100%;
 }
@@ -606,9 +605,56 @@ h1,h2,h3,h4,h5,h6,ul,p {
 .card-content {
     padding: 20px 24px;
     border: 1px solid var(--card-border-line);
-    
-    
 }
+
+.overlay {
+    position: relative;
+}
+
+
+
+.overlay-text {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+
+    padding: 63px 24px;
+
+    font-size: 18px;
+    line-height: 1.56;
+    letter-spacing: 0.03em;
+    text-align: center;
+
+    color: var(--primary-bg-color);
+
+    opacity: 0;
+}
+
+.overlay::before {
+    position: absolute;
+    display: inline-block;
+    content: '';
+    width: 100%;
+    height: 100%;
+    
+    background-color:rgba(33, 150, 243, 0.9);
+
+    opacity: 0;
+}
+
+.overlay-text:hover, .overlay:hover::before {
+    opacity: 1;
+}
+
+.link-item:hover .overlay-text{
+    opacity: 1;
+}
+
+.link-item:hover .overlay::before {
+    opacity: 1;
+}
+
+
 
 
    
